@@ -1,6 +1,6 @@
 using UnityEngine;
 
-
+[RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
 
