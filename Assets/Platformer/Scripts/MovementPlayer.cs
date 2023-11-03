@@ -14,6 +14,7 @@ public class MovementPlayer : MonoBehaviour
 
     private const string Jump = "Jump";
     private const string Speed = "Speed";
+    private const string Horizontal = "Horizontal";
 
     private Animator _animator;
     private float _direction;
@@ -31,9 +32,9 @@ public class MovementPlayer : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    private void Update()
     {
-        _direction = Input.GetAxisRaw("Horizontal");
+        _direction = Input.GetAxisRaw(Horizontal);
 
         _hit = Physics2D.Raycast(_rigidbody2D.position, Vector2.down, _groundRadius, _groundLayer);
 
