@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _item;
+    [SerializeField] private CherryItem _item;
 
     private void Start()
     {
