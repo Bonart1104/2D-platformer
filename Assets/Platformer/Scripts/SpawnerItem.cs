@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -10,4 +9,3 @@ public class Spawner : MonoBehaviour
         Instantiate(_item, transform.position, Quaternion.identity);
     }
 }
-

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7570274404815686839}
   - component: {fileID: 825001087390775545}
   - component: {fileID: 5691618218425949769}
-  - component: {fileID: -2371206696422911317}
+  - component: {fileID: -1719708599945641924}
   m_Layer: 0
   m_Name: Cherry
   m_TagString: Untagged
@@ -153,7 +153,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-2371206696422911317
+--- !u!114 &-1719708599945641924
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
