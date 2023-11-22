@@ -421,11 +421,6 @@ Transform:
   m_Father: {fileID: 1962664447}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &544128926 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 3593110286669157998, guid: 63512c1220d2f7946be37616a340b74c, type: 3}
-  m_PrefabInstance: {fileID: 1998006342116321550}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &580325782
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,6 +592,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
+  _player: {fileID: 1962664444}
+  _damage: 1
 --- !u!114 &870270094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,6 +606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fecfb88ef53edd47a69c821b73c42da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 870270093}
 --- !u!61 &870270095
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14186,10 +14184,14 @@ PrefabInstance:
     - target: {fileID: 1592983825121941090, guid: 63512c1220d2f7946be37616a340b74c, type: 3}
       propertyPath: _detectionZone
       value: 
-      objectReference: {fileID: 544128926}
+      objectReference: {fileID: 0}
     - target: {fileID: 1592983825121941090, guid: 63512c1220d2f7946be37616a340b74c, type: 3}
       propertyPath: _detectionDistance
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058149560971797625, guid: 63512c1220d2f7946be37616a340b74c, type: 3}
+      propertyPath: _health
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6866004548693686997, guid: 63512c1220d2f7946be37616a340b74c, type: 3}
       propertyPath: m_RootOrder
@@ -14237,7 +14239,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3243691730179620204, guid: 63512c1220d2f7946be37616a340b74c, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5413985309855390630, guid: 63512c1220d2f7946be37616a340b74c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 347041578936228437, guid: 63512c1220d2f7946be37616a340b74c, type: 3}
@@ -14252,6 +14255,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8958954298402206106, guid: b83e5e985ad196f43ba45de765d92763, type: 3}
+      propertyPath: _health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 898431554528392382, guid: b83e5e985ad196f43ba45de765d92763, type: 3}
       propertyPath: m_Name
       value: EnemyFrog

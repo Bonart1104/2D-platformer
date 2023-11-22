@@ -1,7 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Patrol : MonoBehaviour
+public class Action : MonoBehaviour
 {
     [SerializeField] private Transform _path;
     [SerializeField] private int _speed;
@@ -27,7 +26,7 @@ public class Patrol : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, _player.position) < _detectionDistance)
         {
-            Attack();
+            Chace();
         }
         else
         {
@@ -46,19 +45,36 @@ public class Patrol : MonoBehaviour
         if (transform.position == target.position)
         {
             _currentPoint++;
-            transform.eulerAngles = new Vector2(0, 0);
 
             if (_currentPoint >= _points.Length)
             {
-                transform.eulerAngles = new Vector2(0, -180);
                 _currentPoint = 0;
             }
         }
+
+        if (transform.position.x > target.position.x)
+        {
+            transform.eulerAngles = new Vector2(0, 0);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector2(0, -180);
+        }
     }
 
-    private void Attack()
+    private void Chace()
     {
         transform.position = Vector2.MoveTowards(transform.position, _player.position, _speed * Time.deltaTime);
+
+        if(transform.position.x > _player.position.x)
+        {
+            transform.eulerAngles = new Vector2(0, 0);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector2(0, -180);
+        }
+
     }
 
 }
