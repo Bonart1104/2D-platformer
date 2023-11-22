@@ -6,15 +6,15 @@ using UnityEngine;
 
 public class MovementPlayer : MonoBehaviour
 {
+    private const string Leap = "Jump";
+    private const string Speed = "Speed";
+    private const string Horizontal = "Horizontal";
+
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpForce;
     [SerializeField] private Transform _groundChecker;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private float _groundRadius = 0.5f;
-
-    private const string Leap = "Jump";
-    private const string Speed = "Speed";
-    private const string Horizontal = "Horizontal";
 
     private Animator _animator;
     private Vector2 _velocity;
@@ -24,7 +24,6 @@ public class MovementPlayer : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private RaycastHit2D _hit;
     private SpriteRenderer _spriteRenderer;
-
 
     private void Awake()
     {
