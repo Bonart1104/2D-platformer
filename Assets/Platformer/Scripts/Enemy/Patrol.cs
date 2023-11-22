@@ -1,10 +1,13 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Patrol : MonoBehaviour
 {
     [SerializeField] private Transform _path;
     [SerializeField] private int _speed;
+    [SerializeField] private int _detectionDistance;
 
+    private Transform _player;
     private Transform[] _points;
     private int _currentPoint;
 
@@ -16,9 +19,24 @@ public class Patrol : MonoBehaviour
         {
             _points[i] = _path.GetChild(i);
         }
+
+        _player = GameObject.FindAnyObjectByType<Player>().transform;
     }
 
     private void Update()
+    {
+        if (Vector2.Distance(transform.position, _player.position) < _detectionDistance)
+        {
+            Attack();
+        }
+        else
+        {
+            Patrolling();
+        }
+
+    }
+
+    private void Patrolling()
     {
         Transform target = _points[_currentPoint];
 
@@ -37,4 +55,10 @@ public class Patrol : MonoBehaviour
             }
         }
     }
+
+    private void Attack()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, _player.position, _speed * Time.deltaTime);
+    }
+
 }
