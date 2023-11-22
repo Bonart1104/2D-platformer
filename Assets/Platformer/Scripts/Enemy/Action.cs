@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Action : MonoBehaviour
 {
@@ -52,6 +53,18 @@ public class Action : MonoBehaviour
             }
         }
 
+        ChangeLookDirection(target);
+    }
+
+    private void Chace()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, _player.position, _speed * Time.deltaTime);
+
+        ChangeLookDirection(_player);        
+    }
+
+    private void ChangeLookDirection(Transform target)
+    {
         if (transform.position.x > target.position.x)
         {
             transform.eulerAngles = new Vector2(0, 0);
@@ -60,21 +73,6 @@ public class Action : MonoBehaviour
         {
             transform.eulerAngles = new Vector2(0, -180);
         }
-    }
-
-    private void Chace()
-    {
-        transform.position = Vector2.MoveTowards(transform.position, _player.position, _speed * Time.deltaTime);
-
-        if(transform.position.x > _player.position.x)
-        {
-            transform.eulerAngles = new Vector2(0, 0);
-        }
-        else
-        {
-            transform.eulerAngles = new Vector2(0, -180);
-        }
-
     }
 
 }
